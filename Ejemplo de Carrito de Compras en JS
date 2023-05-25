@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carrito de compras</title>
+  </head>
+  <body>
+    <h1>Productos</h1>
+    <ul>
+      <li>Producto 1 <button onclick="agregarProducto('Producto 1', 10)">Agregar al carrito</button></li>
+      <li>Producto 2 <button onclick="agregarProducto('Producto 2', 20)">Agregar al carrito</button></li>
+      <li>Producto 3 <button onclick="agregarProducto('Producto 3', 30)">Agregar al carrito</button></li>
+    </ul>
+    
+    <h1>Carrito de compras</h1>
+    <ul id="carrito"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    
+    <script>
+      // JavaScript
+      let carrito = [];
+      let total = 0;
+      
+      function agregarProducto(nombre, precio) {
+        let producto = {
+          nombre: nombre,
+          precio: precio,
+          cantidad: 1
+        };
+        
+        let encontrado = false;
+        for (let i = 0; i < carrito.length; i++) {
+          if (carrito[i].nombre === nombre) {
+            carrito[i].cantidad++;
+            encontrado = true;
+            break;
+          }
+        }
+        
+        if (!encontrado) {
+          carrito.push(producto);
+        }
+        
+        total += precio;
+        
+        mostrarCarrito();
+      }
+      
+      function mostrarCarrito() {
+        let carritoHTML = "";
+        for (let i = 0; i < carrito.length; i++) {
+          carritoHTML += "<li>" + carrito[i].nombre + " x " + carrito[i].cantidad + " = $" + carrito[i].precio * carrito[i].cantidad + " <button onclick='eliminarProducto(" + i + ")'>Eliminar</button></li>";
+        }
+        
+        document.getElementById("carrito").innerHTML = carritoHTML;
+        document.getElementById("total").innerHTML = total;
+      }
+      
+      function eliminarProducto(index) {
+        total -= carrito[index].precio * carrito[index].cantidad;
+        carrito.splice(index, 1);
+        
+        mostrarCarrito();
+      }
+    </script>
+  </body>
+</html>
+
+
+STYLE CSS
+
