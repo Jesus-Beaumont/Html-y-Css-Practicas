@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Astro Calculadora</title>
+    <link rel="icon" type="img" href="./favicon calculadora32x32.jpg">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+        <div class="caja">
+        <form name="calc" class="main">
+        <div class="todos-input">
+            <h1> ASTRO CALCULO</h1>
+            <input type="text" name="input" id="respuesta"> 
+        </div>
+        <div class="botonera">
+            <input type="button" id="clear" name="borrar" value="AC" onclick="calc.input.value=''">
+            <input type="button" id="clear" name="sumaresta" value="+/-" onclick="calc.input.value=''">
+            <input type="button" id="clear" name="porcentaje" value="%" onclick="calc.input.value=''">
+
+            <input type="button" class="operador" name="dividir" value="/" onclick="calc.input.value +='/'">
+            <input type="button" class="numero" name="siete" value="7" onclick="calc.input.value +='7'">
+            <input type="button" class="numero" name="ocho" value="8" onclick="calc.input.value +='8'">
+            <input type="button" class="numero" name="numeve" value="9" onclick="calc.input.value +='9'">
+
+            <input type="button" class="operador" name="multi" value="x" onclick="calc.input.value += '*'">
+
+            <input type="button" class="num" name="cuatro" value="4" onclick="calc.input.value += '4'">
+            <input type="button" class="num" name="cinco" value="5" onclick="calc.input.value += '5'">
+            <input type="button" class="num" name="seis" value="6" onclick="calc.input.value += '6'">
+
+            <input type="button" class="operador" name="resta" value="-" onclick="calc.input.value += '-'">
+
+            <input type="button" class="numero" name="uno" value="1" onclick="calc.input.value +='1'">
+            <input type="button" class="numero" name="dos" value="2" onclick="calc.input.value +='2'">
+            <input type="button" class="numero" name="tres" value="3" onclick="calc.input.value +='3'">
+
+            <input type="button" class="operador" name="mas" value="+" onclick="calc.input.value +='+'">
+
+            <input type="button" class="numero" name="cero" value="0" onclick="calc.input.value +='0'">
+            <input type="button" class="numero" name="punto" value="." onclick="calc.input.value +='.'">
+
+            <input type="button" class="operador" name="igual" value="=" onclick="calc.input.value = eval(calc.input.value)">
+        </div>
+    </form>
+</div>
+    
+</body>
+</html>
+
+
+
+Style css:
+
+ body {
+        margin: 60px auto;
+        width: 1000rem;
+        max-width: 950px;
+        background-image: url(./fondovectorizado.jpg);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat; /*para que sea una imagen unica de fondo*/
+        display: block;
+        margin: 10px;
+        border-radius: 12%;
+ 
+ 
+
+ 
+ 
+}
+
+/* div{   centrar div de manera corta
+    display: grid;
+    place-items: center;
+} */
+
+.main {
+    margin: 100px auto;
+    background-color: chartreuse;
+    width: 320px;
+    height: 650px;
+    text-align: center;
+    border-radius: 4px;
+    background-size: 300rem;
+    margin-right: -25.8px;
+
+}
+
+
+h1{
+    text-align: center;
+    color: rgb(228, 166, 10);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-left-style:solid;
+    border-right-style:double;
+    margin-top: 100px, 600px, 400px, 150px;
+    font-size: 3.0rem;
+}
+.todos-input {
+    text-align: center;
+    width: 50;
+    margin: 0 auto;
+    background-color: rgb(30, 9, 70)
+     
+}
+
+input {
+    right: auto;
+    outline: none;
+    top: 20rem;
+    box-align: content;
+    border: 30;
+    color: aliceblue;
+    background: #333;
+    border-radius:  26px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 5px;
+    float: left;
+    font-size: 20px;
+    height: 65px;
+    width: 55px;
+    border-radius: 12%;
+    margin-right: 20px;
+    margin: cover;
+    
+    
+}
+
+#respuesta {
+    width: 258px;
+    font-size: 26px;
+    text-align: right;
+    font-size: 53px;
+    font-weight: 100 !important;
+    margin-top: 50px;
+    padding: auto;
+    margin-left: 30px;
+}
+
+.operator:hover {
+    background-color: #fff;
+    color: #e99e39
+}
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
