@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="script3y.js"></script>
+    <title>3 en Raya</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: auto;
+      }
+      td {
+        width: 80px;
+        height: 80px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .playerX {
+        color: blue;
+      }
+      .playerO {
+        color: red;
+      }
+      .winner {
+        background-color: #b9ffae;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td id="00"></td>
+        <td id="01"></td>
+        <td id="02"></td>
+      </tr>
+      <tr>
+        <td id="10"></td>
+        <td id="11"></td>
+        <td id="12"></td>
+      </tr>
+      <tr>
+        <td id="20"></td>
+        <td id="21"></td>
+        <td id="22"></td>
+      </tr>
+    </table>
+    <p id="message"></p>
+  </body>
+</html>
