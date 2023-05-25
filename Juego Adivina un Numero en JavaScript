@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivina un Numero</title>
+    <script src="./adivina.js"></script>
+<body>
+    
+</body>
+</html>
+
+*******javaScript*******
+//La maquina aleatoriamente elige un numero entre el 1 y el 100.*/
+
+function getRandomNumber( numMin, numMax ) {
+    let iAleat;
+    
+    if ( numMin > numMax ) {
+        let change;
+        change = numMin;  
+        numMin = numMax;  
+        numMax = change;  
+    }
+    iAleat = Math.floor( Math.random() * ( numMax - numMin + 1 ) + numMin );
+
+    return iAleat;
+}
+
+function getUserOption(rangeMin, rangeMax) {
+    let userOption;
+    userOption = parseInt(prompt( `Elige un numero aleatorio entre ${rangeMin} y ${rangeMax}`  ));
+    return userOption;
+}
+
+function checkGreaterLessNumbers ( guessNumber, userNumber, rangeMin, rangeMax ) {
+    if ( guessNumber > userNumber ) {
+        rangeMin = userNumber + 1;
+    }else if (guessNumber < usernumber) { 
+        rangeMax = userNumber - 1;
+    } 
+    return [rangeMin, rangeMax];
+}
+   
+function init() {
+    let rangeMin = 1, rangeMax = 5;
+    let randomNumber = getRandomNumber(rangeMin, rangeMax);
+    let userNumber = getUserOption(rangeMin, rangeMax);
+    console.log(userNumber);
+    console.log(randomNumber);
+    checkEqualNumbers (userNumber, randomNumber);
+   /*  ranges = checkGreaterLessNumbers ( guessNumber, userNumber, rangeMin, rangeMax )
+    rangeMin = ranges[ 0 ];
+    rangeMax = ranges[ 1 ]; */
+}
+
+function checkEqualNumbers (userNumber, randomNumber) {
+     if (randomNumber === userNumber) { 
+        document.write("!Tuviste exito");
+     } else {
+        document.write("!Perdiste");
+     }
+    
+}
+    
+init();
+
